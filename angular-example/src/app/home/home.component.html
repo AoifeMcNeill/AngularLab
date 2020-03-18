@@ -1,3 +1,16 @@
 <mat-table [dataSource]="dataSource">
-    <!--[..]-->
+    <ng-container matColumnDef="teamName">
+        <mat-header-cell *matHeaderCellDef>Team Name</mat-header-cell>
+        <mat-cell *matCellDef="let team">{{team.teamName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="teamLocation">
+        <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+        <mat-cell *matCellDef="let team">{{team.teamLocation}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="teamNumber">
+        <mat-header-cell *matHeaderCellDef>Number in team</mat-header-cell>
+        <mat-cell *matCellDef="let team">{{team.teamNumber}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="teamTableColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: teamTableColumns"></mat-row>
 </mat-table>
